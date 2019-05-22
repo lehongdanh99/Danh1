@@ -12,7 +12,7 @@ namespace QuanLiXe
     class KhachHang
     {
         MY_DB mydb = new MY_DB();
-
+        #region Giai Doan 1
         public DataTable getPhiGuiXe()
         {
             SqlCommand cmd = new SqlCommand("select * from GIAGUIXE", mydb.getConnection);
@@ -22,6 +22,7 @@ namespace QuanLiXe
             return table;
         }
         //public bool updatePhiGuiXe(string xedap, string xemay, string oto)
+       
         public bool updateBaiXe(string num, string vitri)
         {
             SqlCommand cmd = new SqlCommand("update BAIXE set khuA=@num where vitriXe=@vitri ", mydb.getConnection);
@@ -193,6 +194,7 @@ namespace QuanLiXe
             }
 
         }
+       
         //Them Khach Hang,cần bổ sung biến
         public bool insertCus(string vitri, string loaixe, MemoryStream anhbienso, MemoryStream anhxe, DateTime ngaygui, TimeSpan giogui, string yeucau)// Cần thêm các biến
 
@@ -326,17 +328,10 @@ namespace QuanLiXe
                 return false;
             }
         }
-        
-        //Lấy Thông Tin Khách Hàng để Load Lên MenuStrip
-        public DataTable getThongTinKH(string username)
-        {
-            SqlCommand cmd = new SqlCommand("select *from KHACHHANG where maKH = @makh",mydb.getConnection);
-            cmd.Parameters.Add("@makh", SqlDbType.NChar).Value = Global.username;
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            return dt;
-        }
+        #endregion
+
+
+       
 
     }
 }

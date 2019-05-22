@@ -73,5 +73,115 @@ namespace QuanLiXe
                 return false;
             }
         }
+
+        #region Giai Doan 2
+        //Lấy Thông Tin Khách Hàng để Load Lên MenuStrip
+        public DataTable getThongTinKH(string username)
+        {
+            SqlCommand cmd = new SqlCommand("select * from KHACHHANG where maKH = @makh", mydb.getConnection);
+            cmd.Parameters.Add("@makh", SqlDbType.NChar).Value = Global.username;
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+        }
+
+        public bool UpdateThongTinKhach(string user, string fname, string lname, string gender, DateTime birthday, string phone, string address, string cmnd, MemoryStream ava)
+        {
+            SqlCommand cmd = new SqlCommand("update KHACHHANG set fname=@fname,lName=@lname,gender=@gender,birthday=@birthday,phone=@phone,address=@address,cmnd=@cmnd,ava=@ava where username=@user", mydb.getConnection);
+            cmd.Parameters.Add("@user", SqlDbType.VarChar).Value = Global.username;
+            cmd.Parameters.Add("@fname", SqlDbType.VarChar).Value = fname;
+            cmd.Parameters.Add("@lname", SqlDbType.VarChar).Value = lname;
+            cmd.Parameters.Add("@gender", SqlDbType.VarChar).Value = gender;
+            cmd.Parameters.Add("@birthday", SqlDbType.DateTime).Value = birthday;
+            cmd.Parameters.Add("@phone", SqlDbType.VarChar).Value = phone;
+            cmd.Parameters.Add("@address", SqlDbType.VarChar).Value = address;
+            cmd.Parameters.Add("@ava", SqlDbType.Image).Value = ava;
+            mydb.openConnection();
+            if (cmd.ExecuteNonQuery() == 1)
+            {
+                mydb.closeConnection();
+                return true;
+            }
+            else
+            {
+                mydb.closeConnection();
+                return false;
+            }
+        }
+        //Dang Ký Xe
+        public bool InsertDangKyXe(string Cavet, MemoryStream BienSo, MemoryStream SoMay, MemoryStream AnhXe, string MauSac, string HangXe, string SoKm, string DichVu, string LoaiXe, string Makh)
+        {
+            SqlCommand cmd = new SqlCommand("insert into THONGTINXE(Cavet,BienSo,SoMay,AnhXe,MauSac,HangXe,SoKM,DichVu,LoaiXe,MaKH)" +
+                "values(@cavet,@bienso,@somay,@anhxe,@mausac,@hang,@sokm,@dichvu,@loaixe,@makh)", mydb.getConnection);
+            cmd.Parameters.Add("@cavet", SqlDbType.NChar).Value = Cavet;
+            cmd.Parameters.Add("@bienso", SqlDbType.Image).Value = BienSo.ToArray();
+            cmd.Parameters.Add("@somay", SqlDbType.Image).Value = SoMay.ToArray();
+            cmd.Parameters.Add("@anhxe", SqlDbType.Image).Value = AnhXe.ToArray();
+            cmd.Parameters.Add("@mausac", SqlDbType.NChar).Value = MauSac;
+            cmd.Parameters.Add("@hang", SqlDbType.NChar).Value = HangXe;
+            cmd.Parameters.Add("@sokm", SqlDbType.NChar).Value = SoKm;
+            cmd.Parameters.Add("@dichvu", SqlDbType.NChar).Value = DichVu;
+            cmd.Parameters.Add("@loaixe", SqlDbType.NChar).Value = LoaiXe;
+            cmd.Parameters.Add("@makh", SqlDbType.NChar).Value = Makh;
+
+            mydb.openConnection();
+            if (cmd.ExecuteNonQuery() == 1)
+            {
+                mydb.closeConnection();
+                return true;
+            }
+            else
+            {
+                mydb.closeConnection();
+                return false;
+            }
+        }
+        //Update đăng ký xe
+        public bool UpdateDangKyXe(string Cavet, MemoryStream BienSo, MemoryStream SoMay, MemoryStream AnhXe, string MauSac, string HangXe, string SoKm, string DichVu, string LoaiXe, string Makh)
+        {
+            SqlCommand cmd = new SqlCommand("Update set THONGTINXE(Cavet=@cavet,BienSo=@bienso,SoMay=@somay,AnhXe=@anhxe,MauSac=@mausac,HangXe=@hang,SoKM=@sokm,DichVu=@dichvu,LoaiXe=@loaixe,MaKH=@makh)", mydb.getConnection);
+            cmd.Parameters.Add("@cavet", SqlDbType.NChar).Value = Cavet;
+            cmd.Parameters.Add("@bienso", SqlDbType.Image).Value = BienSo.ToArray();
+            cmd.Parameters.Add("@somay", SqlDbType.Image).Value = SoMay.ToArray();
+            cmd.Parameters.Add("@anhxe", SqlDbType.Image).Value = AnhXe.ToArray();
+            cmd.Parameters.Add("@mausac", SqlDbType.NChar).Value = MauSac;
+            cmd.Parameters.Add("@hang", SqlDbType.NChar).Value = HangXe;
+            cmd.Parameters.Add("@sokm", SqlDbType.NChar).Value = SoKm;
+            cmd.Parameters.Add("@dichvu", SqlDbType.NChar).Value = DichVu;
+            cmd.Parameters.Add("@loaixe", SqlDbType.NChar).Value = LoaiXe;
+            cmd.Parameters.Add("@makh", SqlDbType.NChar).Value = Makh;
+
+            mydb.openConnection();
+            if (cmd.ExecuteNonQuery() == 1)
+            {
+                mydb.closeConnection();
+                return true;
+            }
+            else
+            {
+                mydb.closeConnection();
+                return false;
+            }
+        }
+        //Delete Đăng Ký Xe
+        public bool DeleteDangKyXe(string cavet)
+        {
+            SqlCommand cmd = new SqlCommand("delete * from KhachHang where cave=@cavet",mydb.getConnection);
+            cmd.Parameters.Add("@cavet", SqlDbType.NChar).Value = cavet;
+            mydb.openConnection();
+            if (cmd.ExecuteNonQuery() == 1)
+            {
+                mydb.closeConnection();
+                return true;
+            }
+            else
+            {
+                mydb.closeConnection();
+                return false;
+            }
+        }
+
+        #endregion
     }
 }

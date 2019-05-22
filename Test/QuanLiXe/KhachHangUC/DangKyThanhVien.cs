@@ -88,11 +88,11 @@ namespace QuanLiXe
             string lname = txtLname.Text;
             string phone = txtPhone.Text;
             string cmnd = txtID.Text;
-            string gender = "Male";
+            string gender = "Nam";
             Global.getID(makh);
             if (radioButtonFemale.Checked)
             {
-                gender = "Female";
+                gender = "Nữ";
             }
             string address = txtAddress.Text;
                 MemoryStream pic = new MemoryStream();

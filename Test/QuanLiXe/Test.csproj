@@ -61,11 +61,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DangKiThanhVien.cs">
-      <SubType>Form</SubType>
+    <Compile Include="KDangKyXeUC.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="DangKiThanhVien.Designer.cs">
-      <DependentUpon>DangKiThanhVien.cs</DependentUpon>
+    <Compile Include="KDangKyXeUC.Designer.cs">
+      <DependentUpon>KDangKyXeUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KhachHangUC\KhachHangChinhUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="KhachHangUC\KhachHangChinhUC.Designer.cs">
+      <DependentUpon>KhachHangChinhUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KhachHangUC\KThongTinUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="KhachHangUC\KThongTinUC.Designer.cs">
+      <DependentUpon>KThongTinUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="nhanvien\ChiaCaUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="nhanvien\ChiaCaUC.Designer.cs">
+      <DependentUpon>ChiaCaUC.cs</DependentUpon>
     </Compile>
     <Compile Include="Class\DangKyLogin.cs" />
     <Compile Include="KhachHangUC\DichVuDangKyXeUC.cs">
@@ -227,8 +245,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>_DESKTOP_RRRHOP4ThoVPGS.xsd</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="DangKiThanhVien.resx">
-      <DependentUpon>DangKiThanhVien.cs</DependentUpon>
+    <EmbeddedResource Include="KDangKyXeUC.resx">
+      <DependentUpon>KDangKyXeUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KhachHangUC\KhachHangChinhUC.resx">
+      <DependentUpon>KhachHangChinhUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KhachHangUC\KThongTinUC.resx">
+      <DependentUpon>KThongTinUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="nhanvien\ChiaCaUC.resx">
+      <DependentUpon>ChiaCaUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KhachHangUC\DichVuDangKyXeUC.resx">
       <DependentUpon>DichVuDangKyXeUC.cs</DependentUpon>

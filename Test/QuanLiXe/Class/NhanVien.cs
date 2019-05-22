@@ -145,6 +145,28 @@ namespace QuanLiXe
             }
 
         }
+        public bool insertCa(string manv, string ca, string luong, string khu, string tinhtrang, DateTime day)
+        {
+            SqlCommand cmd = new SqlCommand("insert into Chiaca(maNV,ca,luongngay,Khu,tinhtrang,ngay)" +
+                "values (@makh,@type,@luong,@note,@mahd,@day)", mydb.getConnection);
+            cmd.Parameters.Add("@makh", SqlDbType.VarChar).Value = manv;
+            cmd.Parameters.Add("@type", SqlDbType.VarChar).Value = ca;
+            cmd.Parameters.Add("@luong", SqlDbType.VarChar).Value = luong;
+            cmd.Parameters.Add("@note", SqlDbType.VarChar).Value = khu;
+            cmd.Parameters.Add("@mahd", SqlDbType.VarChar).Value = tinhtrang;
+            cmd.Parameters.Add("@day", SqlDbType.VarChar).Value = day;
+            mydb.openConnection();
+            if (cmd.ExecuteNonQuery() == 1)
+            {
+                mydb.closeConnection();
+                return true;
+            }
+            else
+            {
+                mydb.closeConnection();
+                return false;
+            }
+        }
         public bool insertTho(string manv, string type, string note, string mahd)
         {
             SqlCommand cmd = new SqlCommand("insert into Tho(MaNV,Type,Note,MaHD)" +
@@ -181,6 +203,39 @@ namespace QuanLiXe
             DataTable dt = new DataTable();
             da.Fill(dt);
             return dt;
+        }
+        public DataTable chiaCa()
+        {
+            SqlCommand cmd = new SqlCommand("select * from Chiaca ", mydb.getConnection);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+        }
+        public bool checkNV(string manv)
+        {
+            SqlCommand cmd = new SqlCommand("select maNV from NHANVIEN where maNV=@manV ", mydb.getConnection);
+            cmd.Parameters.Add("@manV", SqlDbType.NChar).Value = manv;
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            // đổ vào bảng. Nếu dữ liệu lớn hơn thì đúng không thì sai
+            if ((dt.Rows.Count) > 0)
+            {
+                return true;
+
+            }
+            return false;
+        }
+        public DataTable getCa(string ca)
+        {
+            SqlCommand cmd = new SqlCommand("select * from Chiaca where ca=@ca ", mydb.getConnection);
+            cmd.Parameters.Add("@ca", SqlDbType.NChar).Value = ca;
+            cmd.Connection = mydb.getConnection;
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable table = new DataTable();
+            da.Fill(table);
+            return table;
         }
     }
 }

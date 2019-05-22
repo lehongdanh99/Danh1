@@ -26,18 +26,24 @@ namespace QuanLiXe
             gioiThieuUC.BringToFront();
         }
         LoginUC login = new LoginUC();
-        KhachHang kh = new KhachHang();
+        Cus kh = new Cus();
         public void QuanLiForm_Load(object sender, EventArgs e)
         {
+            khachHangChinhUC1.Visible = false;
             loginUC1.BringToFront();
             panelUnknow.BringToFront();
             btnLogin.BringToFront();
             btnRegister.BringToFront();
             panelTho.Location = new Point(-3, 0);
+            panelTho.Size = new Size(355, 730);
             panelUnknow.Location = new Point(-3, 0);
+            panelUnknow.Size = new Size(355, 730);
             panelKhachHang.Location = new Point(-3, 0);
+            panelKhachHang.Size = new Size(355, 730);
             panelNhanVien.Location = new Point(-3, 0);
+            panelNhanVien.Size = new Size(355, 730);
             panelForm.Location = new Point(-3, 0);
+            panelForm.Size = new Size(355, 730);
             menuStrip.Visible = false;
             panelTho.Location = new Point(-3, 0);
             gioiThieuUC.BringToFront();
@@ -176,8 +182,11 @@ namespace QuanLiXe
             }
             else if (ChkBox() == "kh")
             {
-                panelKhachHang.BringToFront();
-                panelKhachHang.Visible = true;
+                khachHangChinhUC1.Visible = true;
+                khachHangChinhUC1.BringToFront();
+                //panelKhachHang.BringToFront();
+                //panelKhachHang.Visible = true;
+                gioiThieuUC.Visible = false;
                 panelTho.Visible = false;
                 panelForm.Visible = false;
                 panelNhanVien.Visible = false;
@@ -242,6 +251,8 @@ namespace QuanLiXe
             panelClickKH.Height = btnKThongTin.Height;
             panelClickKH.Top = btnKThongTin.Top;
             panelClickKH.BringToFront();
+
+            kThongTinKH1.BringToFront();
         }
 
         private void btnKDichVuThue_Click(object sender, EventArgs e)

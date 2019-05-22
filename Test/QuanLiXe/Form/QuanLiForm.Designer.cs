@@ -71,13 +71,6 @@
             this.menuStripLogout = new System.Windows.Forms.MenuStrip();
             this.menuName = new System.Windows.Forms.ToolStripMenuItem();
             this.menuLogout = new System.Windows.Forms.ToolStripMenuItem();
-            this.loginUC1 = new QuanLiXe.LoginUC();
-            this.gioiThieuUC = new QuanLiXe.UserControls.GioiThieuUC();
-            this.TongDoanhThuUC = new QuanLiXe.UserControls.TongDoanThuUC();
-            this.nhanVienUC1 = new QuanLiXe.NhanVienUC();
-            this.quanLiTatCaXe = new QuanLiXe.UserControls.QuanLiTatCaXe();
-            this.giaoDienQuanLiXeUC = new QuanLiXe.UserControls.GiaoDienQuanLiXeUC();
-            this.hopDongGui = new QuanLiXe.UserControls.HopDongGui();
             this.panelTho = new System.Windows.Forms.Panel();
             this.panelClickTho = new System.Windows.Forms.Panel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -85,6 +78,15 @@
             this.btQuanLiBaiXeTho = new System.Windows.Forms.Button();
             this.btThongTinTho = new System.Windows.Forms.Button();
             this.btGioiThieuTho = new System.Windows.Forms.Button();
+            this.kThongTinKH1 = new QuanLiXe.KThongTinKH();
+            this.TongDoanhThuUC = new QuanLiXe.UserControls.TongDoanThuUC();
+            this.nhanVienUC1 = new QuanLiXe.NhanVienUC();
+            this.quanLiTatCaXe = new QuanLiXe.UserControls.QuanLiTatCaXe();
+            this.giaoDienQuanLiXeUC = new QuanLiXe.UserControls.GiaoDienQuanLiXeUC();
+            this.hopDongGui = new QuanLiXe.UserControls.HopDongGui();
+            this.loginUC1 = new QuanLiXe.LoginUC();
+            this.gioiThieuUC = new QuanLiXe.UserControls.GioiThieuUC();
+            this.khachHangChinhUC1 = new QuanLiXe.KhachHangChinhUC();
             this.panelForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelKhachHang.SuspendLayout();
@@ -114,9 +116,9 @@
             this.panelForm.Controls.Add(this.btThongTinKhachHang);
             this.panelForm.Controls.Add(this.panelClick);
             this.panelForm.Controls.Add(this.btGioiThieu);
-            this.panelForm.Location = new System.Drawing.Point(-3, 0);
+            this.panelForm.Location = new System.Drawing.Point(0, 12);
             this.panelForm.Name = "panelForm";
-            this.panelForm.Size = new System.Drawing.Size(355, 753);
+            this.panelForm.Size = new System.Drawing.Size(165, 592);
             this.panelForm.TabIndex = 0;
             // 
             // btHopDongKhachHang
@@ -262,9 +264,9 @@
             this.panelKhachHang.Controls.Add(this.btnKThongTin);
             this.panelKhachHang.Controls.Add(this.panelClickKH);
             this.panelKhachHang.Controls.Add(this.btGioiThieuKH);
-            this.panelKhachHang.Location = new System.Drawing.Point(1453, 12);
+            this.panelKhachHang.Location = new System.Drawing.Point(811, 57);
             this.panelKhachHang.Name = "panelKhachHang";
-            this.panelKhachHang.Size = new System.Drawing.Size(355, 752);
+            this.panelKhachHang.Size = new System.Drawing.Size(126, 353);
             this.panelKhachHang.TabIndex = 10;
             // 
             // btnKHoaDon
@@ -377,7 +379,7 @@
             this.menuTuyChon});
             this.menuStrip.Location = new System.Drawing.Point(350, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(165, 47);
+            this.menuStrip.Size = new System.Drawing.Size(138, 39);
             this.menuStrip.TabIndex = 4;
             this.menuStrip.Text = "menuStrip1";
             // 
@@ -387,20 +389,20 @@
             this.baiXeToolStripMenuItem,
             this.quanLiToolStripMenuItem});
             this.menuTuyChon.Name = "menuTuyChon";
-            this.menuTuyChon.Size = new System.Drawing.Size(157, 43);
+            this.menuTuyChon.Size = new System.Drawing.Size(130, 35);
             this.menuTuyChon.Text = "Tùy chọn";
             // 
             // baiXeToolStripMenuItem
             // 
             this.baiXeToolStripMenuItem.Name = "baiXeToolStripMenuItem";
-            this.baiXeToolStripMenuItem.Size = new System.Drawing.Size(200, 44);
+            this.baiXeToolStripMenuItem.Size = new System.Drawing.Size(169, 36);
             this.baiXeToolStripMenuItem.Text = "Bãi xe";
             this.baiXeToolStripMenuItem.Click += new System.EventHandler(this.baiXeToolStripMenuItem_Click);
             // 
             // quanLiToolStripMenuItem
             // 
             this.quanLiToolStripMenuItem.Name = "quanLiToolStripMenuItem";
-            this.quanLiToolStripMenuItem.Size = new System.Drawing.Size(200, 44);
+            this.quanLiToolStripMenuItem.Size = new System.Drawing.Size(169, 36);
             this.quanLiToolStripMenuItem.Text = "Quản lí";
             this.quanLiToolStripMenuItem.Click += new System.EventHandler(this.quanLiToolStripMenuItem_Click);
             // 
@@ -449,9 +451,9 @@
             this.panelNhanVien.Controls.Add(this.btThongTinNV);
             this.panelNhanVien.Controls.Add(this.panelClickNV);
             this.panelNhanVien.Controls.Add(this.btGioiThieuNV);
-            this.panelNhanVien.Location = new System.Drawing.Point(732, 42);
+            this.panelNhanVien.Location = new System.Drawing.Point(478, 145);
             this.panelNhanVien.Name = "panelNhanVien";
-            this.panelNhanVien.Size = new System.Drawing.Size(355, 730);
+            this.panelNhanVien.Size = new System.Drawing.Size(168, 526);
             this.panelNhanVien.TabIndex = 11;
             // 
             // btThongKeNV
@@ -578,9 +580,9 @@
             this.panelUnknow.Controls.Add(this.btDangNhapUnknow);
             this.panelUnknow.Controls.Add(this.panelClickUnknow);
             this.panelUnknow.Controls.Add(this.btGioiThieuUnknow);
-            this.panelUnknow.Location = new System.Drawing.Point(358, 70);
+            this.panelUnknow.Location = new System.Drawing.Point(221, 164);
             this.panelUnknow.Name = "panelUnknow";
-            this.panelUnknow.Size = new System.Drawing.Size(355, 702);
+            this.panelUnknow.Size = new System.Drawing.Size(277, 510);
             this.panelUnknow.TabIndex = 12;
             // 
             // pictureBox4
@@ -645,9 +647,9 @@
             this.menuStripLogout.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuName});
             this.menuStripLogout.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            this.menuStripLogout.Location = new System.Drawing.Point(0, 767);
+            this.menuStripLogout.Location = new System.Drawing.Point(0, 775);
             this.menuStripLogout.Name = "menuStripLogout";
-            this.menuStripLogout.Size = new System.Drawing.Size(118, 47);
+            this.menuStripLogout.Size = new System.Drawing.Size(97, 39);
             this.menuStripLogout.TabIndex = 66;
             this.menuStripLogout.Text = "menuStrip1";
             // 
@@ -656,102 +658,16 @@
             this.menuName.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuLogout});
             this.menuName.Name = "menuName";
-            this.menuName.Size = new System.Drawing.Size(110, 43);
+            this.menuName.Size = new System.Drawing.Size(89, 35);
             this.menuName.Text = "Name";
             this.menuName.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
             // 
             // menuLogout
             // 
             this.menuLogout.Name = "menuLogout";
-            this.menuLogout.Size = new System.Drawing.Size(240, 44);
+            this.menuLogout.Size = new System.Drawing.Size(200, 36);
             this.menuLogout.Text = "Đăng xuất";
             this.menuLogout.Click += new System.EventHandler(this.menuLogout_Click);
-            // 
-            // loginUC1
-            // 
-            this.loginUC1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.loginUC1.AutoScroll = true;
-            this.loginUC1.AutoSize = true;
-            this.loginUC1.Location = new System.Drawing.Point(350, 0);
-            this.loginUC1.Name = "loginUC1";
-            this.loginUC1.Size = new System.Drawing.Size(1514, 815);
-            this.loginUC1.TabIndex = 65;
-            this.loginUC1.Load += new System.EventHandler(this.loginUC1_Load);
-            // 
-            // gioiThieuUC
-            // 
-            this.gioiThieuUC.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gioiThieuUC.BackColor = System.Drawing.Color.LightBlue;
-            this.gioiThieuUC.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("gioiThieuUC.BackgroundImage")));
-            this.gioiThieuUC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.gioiThieuUC.Location = new System.Drawing.Point(350, 0);
-            this.gioiThieuUC.Margin = new System.Windows.Forms.Padding(4);
-            this.gioiThieuUC.Name = "gioiThieuUC";
-            this.gioiThieuUC.Size = new System.Drawing.Size(1518, 814);
-            this.gioiThieuUC.TabIndex = 59;
-            // 
-            // TongDoanhThuUC
-            // 
-            this.TongDoanhThuUC.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TongDoanhThuUC.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.TongDoanhThuUC.Location = new System.Drawing.Point(350, 0);
-            this.TongDoanhThuUC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.TongDoanhThuUC.Name = "TongDoanhThuUC";
-            this.TongDoanhThuUC.Size = new System.Drawing.Size(1518, 814);
-            this.TongDoanhThuUC.TabIndex = 63;
-            // 
-            // nhanVienUC1
-            // 
-            this.nhanVienUC1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.nhanVienUC1.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.nhanVienUC1.Location = new System.Drawing.Point(350, 0);
-            this.nhanVienUC1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.nhanVienUC1.Name = "nhanVienUC1";
-            this.nhanVienUC1.Size = new System.Drawing.Size(1518, 814);
-            this.nhanVienUC1.TabIndex = 64;
-            // 
-            // quanLiTatCaXe
-            // 
-            this.quanLiTatCaXe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.quanLiTatCaXe.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.quanLiTatCaXe.Location = new System.Drawing.Point(350, 0);
-            this.quanLiTatCaXe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.quanLiTatCaXe.Name = "quanLiTatCaXe";
-            this.quanLiTatCaXe.Size = new System.Drawing.Size(1518, 814);
-            this.quanLiTatCaXe.TabIndex = 60;
-            // 
-            // giaoDienQuanLiXeUC
-            // 
-            this.giaoDienQuanLiXeUC.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.giaoDienQuanLiXeUC.Cursor = System.Windows.Forms.Cursors.Default;
-            this.giaoDienQuanLiXeUC.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.giaoDienQuanLiXeUC.Location = new System.Drawing.Point(350, 0);
-            this.giaoDienQuanLiXeUC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.giaoDienQuanLiXeUC.Name = "giaoDienQuanLiXeUC";
-            this.giaoDienQuanLiXeUC.Size = new System.Drawing.Size(1620, 1169);
-            this.giaoDienQuanLiXeUC.TabIndex = 2;
-            // 
-            // hopDongGui
-            // 
-            this.hopDongGui.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.hopDongGui.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.hopDongGui.Location = new System.Drawing.Point(350, 0);
-            this.hopDongGui.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.hopDongGui.Name = "hopDongGui";
-            this.hopDongGui.Size = new System.Drawing.Size(1518, 814);
-            this.hopDongGui.TabIndex = 61;
             // 
             // panelTho
             // 
@@ -764,9 +680,9 @@
             this.panelTho.Controls.Add(this.btQuanLiBaiXeTho);
             this.panelTho.Controls.Add(this.btThongTinTho);
             this.panelTho.Controls.Add(this.btGioiThieuTho);
-            this.panelTho.Location = new System.Drawing.Point(1090, 12);
+            this.panelTho.Location = new System.Drawing.Point(655, 157);
             this.panelTho.Name = "panelTho";
-            this.panelTho.Size = new System.Drawing.Size(355, 749);
+            this.panelTho.Size = new System.Drawing.Size(156, 247);
             this.panelTho.TabIndex = 10;
             // 
             // panelClickTho
@@ -852,15 +768,117 @@
             this.btGioiThieuTho.UseVisualStyleBackColor = true;
             this.btGioiThieuTho.Click += new System.EventHandler(this.btGioiThieuTho_Click);
             // 
+            // kThongTinKH1
+            // 
+            this.kThongTinKH1.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.kThongTinKH1.Location = new System.Drawing.Point(629, 12);
+            this.kThongTinKH1.Name = "kThongTinKH1";
+            this.kThongTinKH1.Size = new System.Drawing.Size(1327, 783);
+            this.kThongTinKH1.TabIndex = 67;
+            // 
+            // TongDoanhThuUC
+            // 
+            this.TongDoanhThuUC.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TongDoanhThuUC.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.TongDoanhThuUC.Location = new System.Drawing.Point(350, 0);
+            this.TongDoanhThuUC.Margin = new System.Windows.Forms.Padding(4);
+            this.TongDoanhThuUC.Name = "TongDoanhThuUC";
+            this.TongDoanhThuUC.Size = new System.Drawing.Size(1518, 814);
+            this.TongDoanhThuUC.TabIndex = 63;
+            // 
+            // nhanVienUC1
+            // 
+            this.nhanVienUC1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.nhanVienUC1.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.nhanVienUC1.Location = new System.Drawing.Point(350, 0);
+            this.nhanVienUC1.Margin = new System.Windows.Forms.Padding(4);
+            this.nhanVienUC1.Name = "nhanVienUC1";
+            this.nhanVienUC1.Size = new System.Drawing.Size(1518, 814);
+            this.nhanVienUC1.TabIndex = 64;
+            // 
+            // quanLiTatCaXe
+            // 
+            this.quanLiTatCaXe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.quanLiTatCaXe.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.quanLiTatCaXe.Location = new System.Drawing.Point(350, 0);
+            this.quanLiTatCaXe.Margin = new System.Windows.Forms.Padding(4);
+            this.quanLiTatCaXe.Name = "quanLiTatCaXe";
+            this.quanLiTatCaXe.Size = new System.Drawing.Size(1518, 814);
+            this.quanLiTatCaXe.TabIndex = 60;
+            // 
+            // giaoDienQuanLiXeUC
+            // 
+            this.giaoDienQuanLiXeUC.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.giaoDienQuanLiXeUC.Cursor = System.Windows.Forms.Cursors.Default;
+            this.giaoDienQuanLiXeUC.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.giaoDienQuanLiXeUC.Location = new System.Drawing.Point(350, 0);
+            this.giaoDienQuanLiXeUC.Margin = new System.Windows.Forms.Padding(4);
+            this.giaoDienQuanLiXeUC.Name = "giaoDienQuanLiXeUC";
+            this.giaoDienQuanLiXeUC.Size = new System.Drawing.Size(1620, 1169);
+            this.giaoDienQuanLiXeUC.TabIndex = 2;
+            // 
+            // hopDongGui
+            // 
+            this.hopDongGui.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.hopDongGui.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.hopDongGui.Location = new System.Drawing.Point(350, 0);
+            this.hopDongGui.Margin = new System.Windows.Forms.Padding(4);
+            this.hopDongGui.Name = "hopDongGui";
+            this.hopDongGui.Size = new System.Drawing.Size(1518, 814);
+            this.hopDongGui.TabIndex = 61;
+            // 
+            // loginUC1
+            // 
+            this.loginUC1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.loginUC1.AutoScroll = true;
+            this.loginUC1.AutoSize = true;
+            this.loginUC1.Location = new System.Drawing.Point(350, -1);
+            this.loginUC1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.loginUC1.Name = "loginUC1";
+            this.loginUC1.Size = new System.Drawing.Size(1514, 815);
+            this.loginUC1.TabIndex = 65;
+            this.loginUC1.Load += new System.EventHandler(this.loginUC1_Load);
+            // 
+            // gioiThieuUC
+            // 
+            this.gioiThieuUC.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gioiThieuUC.BackColor = System.Drawing.Color.LightBlue;
+            this.gioiThieuUC.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("gioiThieuUC.BackgroundImage")));
+            this.gioiThieuUC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.gioiThieuUC.Location = new System.Drawing.Point(350, 0);
+            this.gioiThieuUC.Margin = new System.Windows.Forms.Padding(4);
+            this.gioiThieuUC.Name = "gioiThieuUC";
+            this.gioiThieuUC.Size = new System.Drawing.Size(1518, 814);
+            this.gioiThieuUC.TabIndex = 59;
+            // 
+            // khachHangChinhUC1
+            // 
+            this.khachHangChinhUC1.Location = new System.Drawing.Point(2, 2);
+            this.khachHangChinhUC1.Name = "khachHangChinhUC1";
+            this.khachHangChinhUC1.Size = new System.Drawing.Size(1080, 800);
+            this.khachHangChinhUC1.TabIndex = 68;
+            // 
             // QuanLiForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.Color.CornflowerBlue;
             this.ClientSize = new System.Drawing.Size(1864, 812);
+            this.Controls.Add(this.khachHangChinhUC1);
             this.Controls.Add(this.panelTho);
             this.Controls.Add(this.menuStripLogout);
-            this.Controls.Add(this.panelUnknow);
             this.Controls.Add(this.panelNhanVien);
             this.Controls.Add(this.panelKhachHang);
             this.Controls.Add(this.btnRegister);
@@ -868,13 +886,15 @@
             this.Controls.Add(this.panelForm);
             this.Controls.Add(this.pictureBoxBack);
             this.Controls.Add(this.menuStrip);
-            this.Controls.Add(this.loginUC1);
-            this.Controls.Add(this.gioiThieuUC);
+            this.Controls.Add(this.kThongTinKH1);
+            this.Controls.Add(this.panelUnknow);
             this.Controls.Add(this.TongDoanhThuUC);
             this.Controls.Add(this.nhanVienUC1);
             this.Controls.Add(this.quanLiTatCaXe);
             this.Controls.Add(this.giaoDienQuanLiXeUC);
             this.Controls.Add(this.hopDongGui);
+            this.Controls.Add(this.loginUC1);
+            this.Controls.Add(this.gioiThieuUC);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "QuanLiForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -959,5 +979,7 @@
         private System.Windows.Forms.Button btQuanLiBaiXeTho;
         private System.Windows.Forms.Button btThongTinTho;
         private System.Windows.Forms.Button btGioiThieuTho;
+        private KThongTinKH kThongTinKH1;
+        private KhachHangChinhUC khachHangChinhUC1;
     }
 }

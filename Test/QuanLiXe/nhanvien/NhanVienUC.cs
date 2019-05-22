@@ -40,10 +40,12 @@ namespace QuanLiXe
             thongKeNVUC11.Visible = false;
             btnSearch.Visible = false;
             txtSearch.Visible = false;
+            chiaCaUC1.Visible = false;
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
+            chiaCaUC1.Visible = false;
             btnSearch.Visible = false;
             txtSearch.Visible = false;
             addNhanVienUC1.Visible = false;
@@ -133,6 +135,7 @@ namespace QuanLiXe
             addNhanVienUC1.Visible = false;
             btnSearch.Visible = false;
             txtSearch.Visible = false;
+            chiaCaUC1.Visible = false;
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -153,6 +156,7 @@ namespace QuanLiXe
 
         private void btnShow_Click(object sender, EventArgs e)
         {
+            chiaCaUC1.Visible = false;
             reload();
         }
         public void reload()
@@ -172,17 +176,45 @@ namespace QuanLiXe
         }
         private void NhanVienUC_Load(object sender, EventArgs e)
         {
+            dgvNhanVien.Visible = false;           
             editNhanVienUC1.Visible = false;
             addNhanVienUC1.Visible = false;
             thongKeNVUC11.Visible = false;
+            chiaCaUC1.Visible = false;
             AddNhanVienUC ad = new AddNhanVienUC();
             ad.Show();
-            dgvNhanVien.DataSource = nv.getAllNV();
-            dgvNhanVien.Show();
-            dgvNhanVien.RowTemplate.Height = 90;
-            DataGridViewImageColumn picCol = new DataGridViewImageColumn();
-            picCol = (DataGridViewImageColumn)dgvNhanVien.Columns[8];
-            picCol.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            //dgvNhanVien.DataSource = nv.getAllNV();
+            //dgvNhanVien.Show();
+            //dgvNhanVien.RowTemplate.Height = 90;
+            //DataGridViewImageColumn picCol = new DataGridViewImageColumn();
+            //picCol = (DataGridViewImageColumn)dgvNhanVien.Columns[8];
+            //picCol.ImageLayout = DataGridViewImageCellLayout.Zoom;
+        }
+
+        private void btnChiaca(object sender, EventArgs e)
+        {
+           
+        }
+        private void hide()
+        {
+            editNhanVienUC1.Visible = false;
+            addNhanVienUC1.Visible = false;
+            thongKeNVUC11.Visible = false;
+
+        }
+        private void btnCa_Click(object sender, EventArgs e)
+        {
+            dgvNhanVien.Visible = false;
+            chiaCaUC1.Location = new Point(100, 70);
+            chiaCaUC1.Show();
+            chiaCaUC1.BringToFront();
+            
+            hide();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
