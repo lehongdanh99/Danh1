@@ -84,41 +84,41 @@ namespace QuanLiXe
             try
             {
                 DateTime bdate = dtpBdate.Value;
-            string makh = txtUsername.Text;
-            string fname = txtFname.Text;
-            string lname = txtLname.Text;
-            string phone = "";
-            if (IsNumber(txtPhone.Text) && (txtPhone.Text).Length < 10)
-            {
-                phone = txtPhone.Text;
-            }
-            else
-            {
-                MessageBox.Show("Vui lòng nhập đúng số điện thoại!");
-                return;
-            }
-            string cmnd = "";
-            if (IsNumber(txtID.Text) && (txtID.Text).Length < 11)
-            {
-                cmnd = txtID.Text;
-            }
-            else
-            {
-                MessageBox.Show("Vui lòng nhập đúng số CMND!");
-                return;
-            }
-            string gender = "Nam";
-            Global.getID(makh);
-            if (radioButtonFemale.Checked)
-            {
-                gender = "Nữ";
-            }
-            string address = txtAddress.Text;
-            MemoryStream pic = new MemoryStream();
-            picAva.Image.Save(pic, picAva.Image.RawFormat);
-            if (!dk.usernameExist(makh))
-            {
-                  if (verif())
+                string makh = txtUsername.Text;
+                string fname = txtFname.Text;
+                string lname = txtLname.Text;
+                string phone = "";
+                if (IsNumber(txtPhone.Text) && (txtPhone.Text).Length < 10)
+                {
+                    phone = txtPhone.Text;
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng nhập đúng số điện thoại!");
+                    return;
+                }
+                string cmnd = "";
+                if (IsNumber(txtID.Text) && (txtID.Text).Length < 11)
+                {
+                    cmnd = txtID.Text;
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng nhập đúng số CMND!");
+                    return;
+                }
+                string gender = "Nam";
+                Global.getID(makh);
+                if (radioButtonFemale.Checked)
+                {
+                    gender = "Nữ";
+                }
+                string address = txtAddress.Text;
+                MemoryStream pic = new MemoryStream();
+                picAva.Image.Save(pic, picAva.Image.RawFormat);
+                if (!dk.usernameExist(makh))
+                {
+                    if (verif())
                     {
                         if (cus.insertCus(makh, fname, lname, gender, bdate, phone, address, cmnd, pic) && dk.insertLogin(makh, txtPassword.Text, "kh"))
                         {
@@ -127,9 +127,9 @@ namespace QuanLiXe
                         }
                     }
                     else { MessageBox.Show("Vui Lòng Nhập Đủ Thông Tin", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information); }
-              
-            }
-            else { MessageBox.Show("Tài Khoản Này Đã Tồn Tại", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+
+                }
+                else { MessageBox.Show("Tài Khoản Này Đã Tồn Tại", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information); }
             }
             catch (Exception E)
             {
@@ -139,9 +139,9 @@ namespace QuanLiXe
         }
         bool verif()
         {
-            if (txtUsername.Text.Trim()==""
-                ||txtPassword.Text.Trim()==""
-                ||txtAddress.Text.Trim()==""||
+            if (txtUsername.Text.Trim() == ""
+                || txtPassword.Text.Trim() == ""
+                || txtAddress.Text.Trim() == "" ||
                 txtID.Text.Trim() == ""
                 || txtFname.Text.Trim() == ""
                 || txtLname.Text.Trim() == ""

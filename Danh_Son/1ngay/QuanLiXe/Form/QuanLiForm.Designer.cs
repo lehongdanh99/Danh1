@@ -741,7 +741,7 @@
             this.menuStripLogout.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.menuStripLogout.Location = new System.Drawing.Point(0, 775);
             this.menuStripLogout.Name = "menuStripLogout";
-            this.menuStripLogout.Size = new System.Drawing.Size(189, 39);
+            this.menuStripLogout.Size = new System.Drawing.Size(97, 39);
             this.menuStripLogout.TabIndex = 66;
             this.menuStripLogout.Text = "menuStrip1";
             // 
@@ -1047,19 +1047,19 @@
             this.Controls.Add(this.panelForm);
             this.Controls.Add(this.pictureBoxBack);
             this.Controls.Add(this.menuStrip);
-            this.Controls.Add(this.loginUC1);
-            this.Controls.Add(this.hoaDonThueXeUC1);
             this.Controls.Add(this.khThongTinKhachHang1);
-            this.Controls.Add(this.hoaDonUC1);
             this.Controls.Add(this.thueXeUC1);
-            this.Controls.Add(this.gioiThieuUC);
-            this.Controls.Add(this.TongDoanhThuUC);
-            this.Controls.Add(this.nhanVienUC1);
             this.Controls.Add(this.nvThongTinNV1);
             this.Controls.Add(this.quanLiTatCaXe);
             this.Controls.Add(this.giaoDienQuanLiXeUC);
             this.Controls.Add(this.hopDongGui);
             this.Controls.Add(this.dangKiThueXeUC1);
+            this.Controls.Add(this.loginUC1);
+            this.Controls.Add(this.hoaDonThueXeUC1);
+            this.Controls.Add(this.hoaDonUC1);
+            this.Controls.Add(this.gioiThieuUC);
+            this.Controls.Add(this.TongDoanhThuUC);
+            this.Controls.Add(this.nhanVienUC1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "QuanLiForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
